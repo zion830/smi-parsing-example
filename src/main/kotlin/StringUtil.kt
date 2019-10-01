@@ -49,7 +49,7 @@ object StringUtil {
         return displayStr
     }
 
-    fun getWordClass(type: String) = when (type) {
+    private fun getWordClass(type: String) = when (type) {
         "NNG", "NNP", "NNB" -> "명사"
         "NP", "NR" -> "대명사"
         "VV" -> "동사"
@@ -64,7 +64,7 @@ object StringUtil {
         "JC" -> "접속조사"
         "EP", "EF", "EC", "ETN", "ETM" -> "어미"
         "XPN" -> "접두사"
-        "XPN", "XSV", "XSA" -> "접미사"
+        "XSN", "XSV", "XSA" -> "접미사"
         "XR" -> "어근"
         "SF" -> "마침표,물음표,느낌표"
         "SP" -> "쉼표,가운뎃점,콜론,빗금"
