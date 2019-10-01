@@ -12,11 +12,11 @@ class MainFrame : JFrame("smi 파싱"), ActionListener {
     private val addFileBtn = JButton("자막 파일 선택하기")
     private val fileNameLabel = JLabel("smi 확장자의 자막 파일을 선택한 후 '자막 분석 시작' 버튼을 클릭해주세요.")
     private val startExtractBtn = JButton("자막 분석 시작")
-    private val contentTextArea = JTextArea(25, 35)
+    private val contentTextArea = JTextArea(30, 35)
     private var selectedFile: File? = null
 
     init {
-        setSize(500, 530)
+        setSize(500, 610)
         setLocationRelativeTo(null)
     }
 
@@ -24,14 +24,14 @@ class MainFrame : JFrame("smi 파싱"), ActionListener {
         val mainPane = MainFrame()
         val jPanel = JPanel()
 
-        addFileBtn.addActionListener(this)
-        startExtractBtn.addActionListener(this)
-
         val scrollPane = JScrollPane(
             contentTextArea,
             JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
             JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS
         )
+
+        addFileBtn.addActionListener(this)
+        startExtractBtn.addActionListener(this)
         contentTextArea.isEditable = false
 
         jPanel.add(fileNameLabel)
